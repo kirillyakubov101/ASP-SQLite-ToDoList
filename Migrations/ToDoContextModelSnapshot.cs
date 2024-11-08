@@ -34,7 +34,7 @@ namespace Todo.Web.Migrations
 
                     b.ToTable("ToDoElements");
                 });
-#pragma warning restore 612, 618
+#pragma warning restore 612, 618 
         }
     }
 }

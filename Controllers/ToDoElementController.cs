@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Todo.Web.Data;
 using Todo.Web.Models;
 using Todo.Web.Models.Entities;
@@ -29,6 +30,13 @@ namespace Todo.Web.Controllers
             await _dbcontext.SaveChangesAsync();
 
             return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> List()
+        {
+            var elements =  await _dbcontext.ToDoElements.ToListAsync();
+            return View(elements);
         }
 
     }
