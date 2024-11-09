@@ -20,7 +20,7 @@
                 <td>@item.Title</td>
                 <td>@item.IsCompleted</td>
                 <td>
-                    <a>Edit</a>
+                    <a class="btn btn-primary" asp-controller="ToDoElement" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
                 </td>
             </tr>
         }
